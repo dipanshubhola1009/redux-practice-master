@@ -11,7 +11,7 @@ const Table = ({ item , handleDelete , handleEditPost }) => {
       <td>{item.userId}</td>
       <td>{item.title}</td>
       <td>{item.body}</td>
-      <td><button onClick={()=> handleModal(true)}>edit</button><button onClick={() => handleDelete(item.id)}>delete</button></td>
+      <td><button onClick={()=> handleModal(true)}><img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button><button onClick={() => handleDelete(item.id)}><img src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></button></td>
 
       { modal && <Modal item={item} handleEditPost={handleEditPost} handleModal={handleModal}/>}
     </>
