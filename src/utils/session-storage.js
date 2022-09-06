@@ -4,6 +4,5 @@ export const saveUserDataInMemory = (data) => {
 }
 
 export const deleteUserDataFromMemory = () => {
-    localStorage.clear();
+    localStorage.setItem("isAuthenticated" , false);
 }
-

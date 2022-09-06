@@ -17,6 +17,9 @@ const Home = (props) => {
     body: "body"
   })
   useEffect(() => {
+    if(!(localStorage.getItem("isAuthenticated") === true || localStorage.getItem("isAuthenticated") === "true")){
+      return navigate("/");
+    }
     setUserName(JSON.parse(localStorage.getItem("userData")).username);
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,7 +65,7 @@ const Home = (props) => {
   const handleLogout = (event) =>{
     event.preventDefault();
     deleteUserDataFromMemory();
-    navigate("/");
+    return navigate("/");
   }
 
  
